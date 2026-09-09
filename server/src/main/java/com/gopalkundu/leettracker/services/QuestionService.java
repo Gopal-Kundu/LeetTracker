@@ -13,13 +13,7 @@ public class QuestionService {
     @Autowired
     private QuestionRepository questionRepository;
 
-    public String addQuestionsInBulk(List<Question> question){
-        try{
-            
-            questionRepository.saveAll(question);
-            return "All Question Moved";
-        }catch(Exception e){
-            return "Error" + e;
-        }
+    public List<Question> addQuestionsInBulk(List<Question> question) {
+        return questionRepository.saveAll(question);
     }
 }
